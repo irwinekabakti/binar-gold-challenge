@@ -1,3 +1,5 @@
+@import "./Accordion.css";
+
 * {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -46,4 +48,24 @@ p {
 .owl-carousel .owl-nav button.owl-prev,
 .owl-carousel button.owl-dot {
   background-color: white !important;
+}
+
+.accordion-item .accordion-header button.accordion-button::after {
+  background-color: white;
+  color: #000000;
+}
+
+.accordion-button:focus {
+  border-color: white;
+  box-shadow: none;
+}
+
+.accordion-flush .accordion-item .accordion-button,
+.accordion-flush .accordion-item .accordion-button.collapsed {
+  border-radius: 0;
+}
+
+.accordion-button:not(.collapsed) {
+  color: black;
+  background-color: white;
 }

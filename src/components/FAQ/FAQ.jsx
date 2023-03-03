@@ -1,6 +1,7 @@
 import React from "react";
 import data_FAQ from "./data";
 import classes from "./FAQ.module.css";
+import "../../Accordion.css";
 
 const FAQ = () => {
   return (

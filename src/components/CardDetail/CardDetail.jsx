@@ -4,6 +4,7 @@ import Loading from "../Loading/Loading";
 import axios from "axios";
 import BASE_API from "../../api/BASE_API";
 import classes from "./CardDetail.module.css";
+import "../../Accordion.css";
 import { text_Include, text_Exclude, text_Details } from "./data";
 
 const CardDetail = () => {
@@ -135,7 +136,11 @@ const CardDetail = () => {
                   <h6 className="fw-bold">{car.name}</h6>
                   {car.category ? (
                     <i className="bi bi-people">
-                      <span className="fw-bold ms-2">{car.category}</span>
+                      <span className="fw-bold ms-2">
+                        {car.category === "small" ? "2-4 orang" : null}
+                        {car.category === "medium" ? "4-6 orang" : null}
+                        {car.category === "large" ? "6-8 orang" : null}
+                      </span>
                     </i>
                   ) : (
                     <h3 className="justify-content-start d-flex">

@@ -115,10 +115,10 @@ const CardDetail = () => {
             </div>
             <div className="col-lg-5 g-4">
               <div className="card">
-                <div className="align-self-center mt-3 mb-3">
+                <div className={`align-self-center ${classes.wrapperImage}`}>
                   {car.image ? (
                     <div className="justify-content-center mb-3 mt-4">
-                      <div className="ms-5 align-self-center w-75 h-75">
+                      <div className="align-self-center mt-4">
                         <img
                           src={car.image}
                           className="card-img-top rounded-1"

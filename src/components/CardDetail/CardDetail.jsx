@@ -135,13 +135,16 @@ const CardDetail = () => {
                 <div className="card-body mt-2 mb-2">
                   <h6 className="fw-bold">{car.name}</h6>
                   {car.category ? (
-                    <i className="bi bi-people">
-                      <span className="fw-bold ms-2">
-                        {car.category === "small" ? "2-4 orang" : null}
-                        {car.category === "medium" ? "4-6 orang" : null}
-                        {car.category === "large" ? "6-8 orang" : null}
+                    <div className="carInfo">
+                      <i className="bi bi-people"></i>
+                      <span className="text-secondary ms-2">
+                        <small>
+                          {car.category === "small" ? "2-4 orang" : null}
+                          {car.category === "medium" ? "4-6 orang" : null}
+                          {car.category === "large" ? "6-8 orang" : null}
+                        </small>
                       </span>
-                    </i>
+                    </div>
                   ) : (
                     <h3 className="justify-content-start d-flex">
                       Category Error !

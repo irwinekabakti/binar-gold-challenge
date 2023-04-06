@@ -12,24 +12,21 @@ const CardDetail = () => {
   const [loading, setLoading] = useState();
   const { id } = useParams();
 
+
   const cardCarDetail = async () => {
     setLoading(true);
-    console.log(car);
     try {
       const config = {
         headers: {
           access_token:
             "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGJjci5pbyIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTY3NTUxNjE1MH0.GWyuCrZVA5HuA3ODVAvgXj5GxoP82BnkUM_rJSuMi5A",
-        },
+        }
       };
 
       const { data } = await axios.get(`${BASE_API}/admin/car/${id}`, config);
-      console.log(data);
       setCar(data);
-
-      // console.log(setCar);
     } catch (error) {
-      console.log(error);
+      alert(error)
     }
     setLoading(false);
   };
@@ -122,7 +119,7 @@ const CardDetail = () => {
                         <img
                           src={car.image}
                           className="card-img-top rounded-1"
-                          alt="..."
+                          alt={`image-${car.id}`}
                         />
                       </div>
                     </div>
@@ -139,9 +136,9 @@ const CardDetail = () => {
                       <i className="bi bi-people"></i>
                       <span className="text-secondary ms-2">
                         <small>
-                          {car.category === "small" ? "2-4 orang" : null}
-                          {car.category === "medium" ? "4-6 orang" : null}
-                          {car.category === "large" ? "6-8 orang" : null}
+                          {car.category.toLowerCase() === "small" ? "2 - 4 orang" : null}
+                          {car.category.toLowerCase() === "medium" ? "4 - 6 orang" : null}
+                          {car.category.toLowerCase() === "large" ? "6 - 8 orang" : null}
                         </small>
                       </span>
                     </div>

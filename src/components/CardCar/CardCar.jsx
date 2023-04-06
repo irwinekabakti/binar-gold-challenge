@@ -10,44 +10,39 @@ const CardCar = () => {
   const [cars, setCars] = useState([]);
   const [filterCar, setFilterCar] = useState({});
   const [loading, setLoading] = useState(false);
-
   const BASE_URL = `${BASE_API}/admin/v2/car`;
 
   const handlerFilterCar = async () => {
     setLoading(true);
     try {
-      // console.log(filterCar);
       const config = {
         headers: {
           access_token:
             "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGJjci5pbyIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTY3NTUxNjE1MH0.GWyuCrZVA5HuA3ODVAvgXj5GxoP82BnkUM_rJSuMi5A",
-        },
+        }
       };
       const { data } = await axios.get(BASE_URL, config);
 
       setCars(data.cars);
     } catch (error) {
-      console.log(error);
+      alert(error)
     }
 
     setLoading(false);
   };
 
   const handleSubmit = () => {
-    // toResult();
     handlerFilterCar();
   };
 
   const navigate = useNavigate();
 
   const toDetail = (id) => {
-    navigate("/detailCar/" + id);
+    navigate(`/detailCar/${id}`);
   };
 
   useEffect(() => {
-    console.log("run");
     setCars(cars);
-    // handlerFilterCar();
   }, []);
 
   return (

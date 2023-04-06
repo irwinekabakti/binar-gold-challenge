@@ -50,9 +50,9 @@ const SearchBar = ({ filterCar, setFilterCar, handleSubmit }) => {
                     {" "}
                     Masukkan Kapasitas Mobil
                   </option>
-                  <option value="2 - 4 orang"> 2 - 4 orang</option>
-                  <option value="4 - 6 orang"> 4 - 6 orang</option>
-                  <option value="6 - 8 orang"> 6 - 8 orang</option>
+                  <option value="small"> 2 - 4 orang</option>
+                  <option value="medium"> 4 - 6 orang</option>
+                  <option value="large"> 6 - 8 orang</option>
                 </select>
               </div>
               <div className="col-lg-3 d-flex flex-column justify-content-between">
@@ -67,7 +67,7 @@ const SearchBar = ({ filterCar, setFilterCar, handleSubmit }) => {
                   <option value="" hidden>
                     Masukkan Harga Sewa /Hari
                   </option>
-                  <option value="400000"> &#60; Rp. 400.000</option>
+                  <option value="0-400000"> &#60; Rp. 400.000</option>
                   <option value="400000-600000">
                     Rp. 400.000 - Rp.600.000
                   </option>
@@ -83,7 +83,6 @@ const SearchBar = ({ filterCar, setFilterCar, handleSubmit }) => {
                   className={`p-1 ${classes.sizeTag}`}
                   name="status"
                   id="status">
-                  {/* <option value="disewa">Disewa</option> */}
                   <option value="sedia">Sedia</option>
                 </select>
               </div>
